@@ -1,0 +1,94 @@
+1) Full cucumber Link : http://toolsqa.com/cucumber/cucumber-tutorial/
+2) Maven Installation Link :http://toolsqa.com/selenium-cucumber-framework/selenium-end-to-end-automation-test/
+3) To Pom.xml file - Add the below data
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+   
+  <groupId>Learn_Cucumber_Framework</groupId>
+  <artifactId>Learn_Cucumber_Framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.2</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>1.2.2</version>
+</dependency>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.11.0</version>
+    </dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>tag-expressions</artifactId>
+    <version>1.1.1</version>
+</dependency>
+  <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>1.2.4</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
+		<build>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.21.0</version>
+        </plugin>
+       
+      </plugins>
+    </pluginManagement>
+</build>
+ 
+</project>
+--------------------------------------------------------------------------------------------------------------------------
+4) To Generate Logs : http://learn-automation.com/how-to-create-log-files-in-selenium/
+copy the code into log4j.properties file and while importing for Logger always impot (import org.apache.log4j.Logger;),
+because other import won't generate logs
+
+log4j.rootLogger=INFO,CONSOLE,R,HTML,TTCC
+ 
+// Here we define the appender
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.TTCC=org.apache.log4j.RollingFileAppender
+log4j.appender.HTML=org.apache.log4j.FileAppender
+ 
+// Here we define log file location
+log4j.appender.R.File=./log/testlog.log
+log4j.appender.TTCC.File=./log/testlog1.log
+log4j.appender.HTML.File=./log/application.html
+ 
+// Here we define the layout and pattern
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+log4j.appender.CONSOLE.layout.ConversionPattern= %5p [%t] (%F:%L)- %m%n
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%d - %c -%p - %m%n
+log4j.appender.TTCC.layout=org.apache.log4j.TTCCLayout
+log4j.appender.TTCC.layout.DateFormat=ISO8601
+log4j.appender.HTML.layout=org.apache.log4j.HTMLLayout
+log4j.appender.HTML.layout.Title=Application log
+log4j.appender.HTML.layout.LocationInfo=true
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
